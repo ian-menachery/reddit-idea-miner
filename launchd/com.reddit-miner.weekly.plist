@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Placeholder for v2 weekly discovery (discover.py). Not active in v1 — the
+  `discover` command doesn't exist yet. Listed here so the install script can
+  reference both files once v2 ships.
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.reddit-miner.weekly</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>-lc</string>
+        <string>cd PROJECT_PATH &amp;&amp; UV_BIN run python -m reddit_miner discover</string>
+    </array>
+
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Weekday</key>
+        <integer>0</integer>
+        <key>Hour</key>
+        <integer>5</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <key>WorkingDirectory</key>
+    <string>PROJECT_PATH</string>
+
+    <key>StandardOutPath</key>
+    <string>PROJECT_PATH/data/logs/launchd-weekly.out.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>PROJECT_PATH/data/logs/launchd-weekly.err.log</string>
+
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>Disabled</key>
+    <true/>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+    </dict>
+</dict>
+</plist>

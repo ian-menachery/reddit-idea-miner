@@ -1,0 +1,32 @@
+# Secrets
+.env
+.env.local
+
+# Data + model caches
+data/
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+*.joblib
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
